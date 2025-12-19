@@ -2,6 +2,93 @@
 
 <!-- version list -->
 
+## v9.8.2 (2025-12-15)
+
+### Bug Fixes
+
+- Allow home subdirectories through is_dangerous_path()
+  ([`e5548ac`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/e5548acb984ca4f8b2ae8381f879a0285094257f))
+
+- Path traversal vulnerability - use prefix matching in is_dangerous_path()
+  ([`9ed15f4`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/9ed15f405a9462b4db7aa44ca2d989e092c008e4))
+
+- Use Path.is_relative_to() for cross-platform dangerous path detection
+  ([`91ffb51`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/91ffb51564e5655ec91111938039ed81e0d8e4c6))
+
+- **security**: Handle macOS symlinked system dirs
+  ([`ba08308`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/ba08308a23d1c1491099c5d0eae548077bd88f9f))
+
+### Chores
+
+- Sync version to config.py [skip ci]
+  ([`c492735`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/c4927358720277efa0373b339bd8e06ee06498d0))
+
+
+## v9.8.1 (2025-12-15)
+
+### Bug Fixes
+
+- **providers**: Omit store parameter for OpenRouter responses endpoint
+  ([`1f8b58d`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/1f8b58d607c2809b9fa78860718a69207cb66e32))
+
+### Chores
+
+- Sync version to config.py [skip ci]
+  ([`69a42a7`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/69a42a71d19d66f1d94d51fa27db29323e3d9a63))
+
+### Refactoring
+
+- **tests**: Address code review feedback
+  ([`0c3e63c`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/0c3e63c0c7f1556f4b6686f9c6f30e4bb4a48c7c))
+
+- **tests**: Remove unused setUp method
+  ([`b6a8d68`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/b6a8d682d920c2283724b588818bc1162a865d74))
+
+
+## v9.8.0 (2025-12-15)
+
+### Chores
+
+- Sync version to config.py [skip ci]
+  ([`cb97a89`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/cb97a891dec6ab7c56b8b35c277ab3680af384d9))
+
+### Features
+
+- Add Claude Opus 4.5 model via OpenRouter
+  ([`813ce5c`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/813ce5c9f7db2910eb12d8c84d3d99f464c430ed))
+
+### Testing
+
+- Add comprehensive test coverage for Opus 4.5 aliases
+  ([`cf63fd2`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/cf63fd25440d599f2ec006bb8cfda5b8a6f61524))
+
+
+## v9.7.0 (2025-12-15)
+
+### Chores
+
+- Sync version to config.py [skip ci]
+  ([`aa85644`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/aa85644c9b15893443107c3a62ec58cd7b9dc532))
+
+### Features
+
+- Re-enable web search for clink codex using correct --enable flag
+  ([`e7b9f3a`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/e7b9f3a5d7e06c690c82b9fd13a93310bcf388ed))
+
+
+## v9.6.0 (2025-12-15)
+
+### Chores
+
+- Sync version to config.py [skip ci]
+  ([`94ff26c`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/94ff26c673a64087eb29f8f54c1828f1157c594a))
+
+### Features
+
+- Support native installed Claude CLI detection
+  ([`adc6231`](https://github.com/BeehiveInnovations/pal-mcp-server/commit/adc6231b98886f0bc35cb04d04d948eba2f0f058))
+
+
 ## v9.5.0 (2025-12-11)
 
 ### Bug Fixes
