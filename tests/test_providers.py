@@ -210,6 +210,7 @@ class TestOpenAIProvider:
         assert provider.validate_model_name("o4mini")
         assert provider.validate_model_name("o4-mini")
         assert provider.validate_model_name("gpt-5.2")
+        assert provider.validate_model_name("gpt-5.2-codex")
         assert provider.validate_model_name("gpt-5.1-codex")
         assert provider.validate_model_name("gpt-5.1-codex-mini")
         assert not provider.validate_model_name("gpt-4o")
@@ -230,6 +231,12 @@ class TestOpenAIProvider:
         base = provider.get_capabilities("gpt-5.2")
         assert base.supports_streaming
         assert base.allow_code_generation
+
+        codex_52 = provider.get_capabilities("gpt-5.2-codex")
+        assert not codex_52.supports_streaming
+        assert codex_52.use_openai_response_api
+        assert codex_52.allow_code_generation
+        assert codex_52.intelligence_score == 20
 
         codex = provider.get_capabilities("gpt-5.1-codex")
         assert not codex.supports_streaming

@@ -62,6 +62,7 @@ The curated defaults in `conf/openrouter_models.json` include popular entries su
 | `deepseek-r1` | `deepseek/deepseek-r1-0528` | DeepSeek reasoning model |
 | `perplexity` | `perplexity/llama-3-sonar-large-32k-online` | Search-augmented model |
 | `gpt5.2`, `gpt-5.2`, `5.2` | `openai/gpt-5.2` | Flagship GPT-5.2 with reasoning and vision |
+| `gpt5.2-codex`, `codex-5.2` | `openai/gpt-5.2-codex` | Latest agentic coding specialization (Responses API) |
 | `gpt5.1-codex`, `codex-5.1` | `openai/gpt-5.1-codex` | Agentic coding specialization (Responses API) |
 | `codex-mini`, `gpt5.1-codex-mini` | `openai/gpt-5.1-codex-mini` | Cost-efficient Codex variant with streaming |
 
@@ -83,15 +84,16 @@ Native catalogues (`conf/openai_models.json`, `conf/gemini_models.json`, `conf/x
 
 ### Latest OpenAI releases
 
-OpenAI's November 13, 2025 drop introduced `gpt-5.1-codex` and `gpt-5.1-codex-mini`, while the flagship base model is now `gpt-5.2`. All of these ship in `conf/openai_models.json`:
+OpenAI's latest releases include `gpt-5.2-codex` (the newest flagship coding model), `gpt-5.1-codex`, and `gpt-5.1-codex-mini`, while the general-purpose flagship is `gpt-5.2`. All of these ship in `conf/openai_models.json`:
 
 | Model | Highlights | Notes |
 |-------|------------|-------|
+| `gpt-5.2-codex` | 400K context, 128K output, latest agentic coding specialization | Streaming disabled; `use_openai_response_api=true`; `allow_code_generation=true`; intelligence_score=20 |
 | `gpt-5.2` | 400K context, 128K output, multimodal IO, configurable reasoning effort | Streaming enabled; use for balanced agent/coding flows |
 | `gpt-5.1-codex` | Responses-only agentic coding version of GPT-5.1 | Streaming disabled; `use_openai_response_api=true`; `allow_code_generation=true` |
 | `gpt-5.1-codex-mini` | Cost-efficient Codex variant | Streaming enabled, retains 400K context and code-generation flag |
 
-These entries include pricing-friendly aliases (`gpt5.2`, `codex-5.1`, `codex-mini`) plus updated capability flags (`supports_extended_thinking`, `allow_code_generation`). Copy the manifest if you operate custom deployment names so downstream providers inherit the same metadata.
+These entries include pricing-friendly aliases (`gpt5.2-codex`, `codex-5.2`, `gpt5.2`, `codex-5.1`, `codex-mini`) plus updated capability flags (`supports_extended_thinking`, `allow_code_generation`). Copy the manifest if you operate custom deployment names so downstream providers inherit the same metadata.
 
 Because providers load the manifests on import, you can tweak capabilities without touching Python. Restart the server after editing the JSON files so changes are picked up.
 
